@@ -1,0 +1,71 @@
+create database webProducts;
+use webProducts;
+SHOW TABLES;
+
+create table products(
+Id int,
+Name varchar(50),
+Category varchar(50),
+Price int,
+Date varchar(50)
+);
+
+create table usuario(
+CODUSUARIO int,
+NOMBRE varchar(50),
+EDAD int,
+DIRECCION varchar(100),
+TELEFONO char(15),
+DNI char(10),
+FECHA_NAC date,
+USUARIO varchar(10),
+CLAVE varchar(10),
+TIPO_USUARIO varchar(20),
+ESTADO varchar(11)
+);
+
+create table students(
+IdEstudiante int,
+NOMBRE varchar(50),
+NOTA int, 
+ESTADO varchar(50)
+);
+
+
+INSERT INTO students (student_id,student_name) VALUES ('108400802',' Fran Delgadao');
+
+
+/*Estudiantes*/
+insert into students (IdEstudiante, NOMBRE, NOTA, ESTADO) values ('119750524','Brenda Carrillo', 0, 'Sin estado');
+insert into students (IdEstudiante, NOMBRE, NOTA, ESTADO) values ('118570232','Fran Delgado', 0, 'Sin estado');
+insert into students (IdEstudiante, NOMBRE, NOTA, ESTADO) values ('119755025','Henry Marín', 0, 'Sin estado');
+insert into students (IdEstudiante, NOMBRE, NOTA, ESTADO) values ('118604023','Fran Vega', 0, 'Sin estado');
+
+
+insert into usuario (CODUSUARIO, NOMBRE, CLAVE, USUARIO) values ('1','Darian', '123', 'Delga');
+
+SELECT * FROM products;
+SELECT * FROM products WHERE Id = 1;
+SELECT * FROM products WHERE Name = 'Kellogs' AND Category = 'Cereal';
+
+SELECT * FROM usuario; 
+
+SELECT * FROM students;
+
+SELECT * FROM students where IdEstudiante = '119750524';
+
+
+/*Update un producto*/
+
+UPDATE students SET NOMBRE = 'Brenda Carrillo' where IdEstudiante = 1;
+
+update students set NOTA = '0' where IdEstudiante = '119750524';
+update students set ESTADO = 'Aprobado' where IdEstudiante = '119750524';
+ 
+
+/*Delete un producto*/
+DELETE from products WHERE id = 3;
+
+DELETE from usuario WHERE CODUSUARIO = 1;
+
+DELETE from Students WHERE IdEstudiante = 4;
